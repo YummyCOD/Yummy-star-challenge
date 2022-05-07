@@ -4,9 +4,9 @@ const gamecanvas = new UICanvas()
 let maintexture = new Texture("images/uimap.png")
 export class GlobalVars {
   public static eggcount = 0
+  public static gameison = false
 
 }
-let gameison = false
 
       
       
@@ -31,8 +31,7 @@ let gameison = false
 }
         ))
       engine.addEntity(npc)
-      gameison = false
-    
+      
       const DialogBox = new UIImage(gamecanvas, maintexture)
       DialogBox.sourceWidth = 760
       DialogBox.sourceHeight = 374
@@ -90,6 +89,7 @@ let gameison = false
         DialogBox.visible = false
         counter.visible = true
         EggCounter.visible = true
+        GlobalVars.gameison = true
         
       
 })
