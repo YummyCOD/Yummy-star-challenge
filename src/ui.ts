@@ -1,14 +1,28 @@
-import { Obj } from "./object"
+import * as Obj from "./object";
 
 const gamecanvas = new UICanvas()
 let maintexture = new Texture("images/uimap.png")
 export class GlobalVars {
   public static eggcount = 0
-  public static gameison = false
+ 
 
 }
 
-      
+      export class ObjCrea extends Entity {
+        constructor(
+        model?:GLTFShape,
+        X?:typeof Obj.Settings.X,
+        Y?:typeof Obj.Settings.Y
+        ){
+          super()
+          const Objcreation =  Obj.Base
+          Objcreation.addComponent(model? model: new BoxShape)
+          Objcreation.addComponent(new Transform({
+          position: new Vector3(X? X:1,0,Y? Y:1)
+      }))
+
+        }
+      }
       
 
       const npc = new Entity
@@ -73,7 +87,7 @@ export class GlobalVars {
       
     
 
-      const Yes = new UIImage(DialogBox, maintexture)
+      export const Yes = new UIImage(DialogBox, maintexture)
       Yes.sourceWidth = 249
       Yes.sourceHeight = 73
       Yes.sourceLeft = 47
@@ -89,8 +103,11 @@ export class GlobalVars {
         DialogBox.visible = false
         counter.visible = true
         EggCounter.visible = true
-        GlobalVars.gameison = true
+        engine.addEntity(Obj.Base)
         
+        
+        
+                
       
 })
       const No = new UIImage(DialogBox, maintexture)
@@ -112,4 +129,3 @@ export class GlobalVars {
     })
 
 
-  

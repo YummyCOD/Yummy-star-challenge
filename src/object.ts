@@ -1,24 +1,21 @@
 import * as UI from "./ui";
 
-export class Obj extends Entity {
-constructor(
-  model: GLTFShape,
-  X: number,
-  Y: number
-){
-  super()
-  
-      this.addComponent(model)
-      this.addComponent(new Transform({
-          position: new Vector3(X,0,Y)
+export class Settings{
+     public static model = GLTFShape
+     public static X : number
+     public static Y : number
+}
+     export const Base = new Entity
+      Base.addComponent(new Transform({
+          position: new Vector3(Settings.X? Settings.X:1,0,Settings.Y? Settings.Y:1)
       }))
-      this.addComponent(
+      Base.addComponent(
           new OnPointerDown(
             (e) => {
   
               UI.GlobalVars.eggcount++
               UI.counter.value = UI.GlobalVars.eggcount + "/5"
-              engine.removeEntity(this)
+              engine.removeEntity(Base)
 
 
                
@@ -31,12 +28,5 @@ constructor(
   
   }
           ))
-          
-          if (UI.GlobalVars.gameison = true) {
-            engine.addEntity(this)
-          }
-}
-}
-
 
 
