@@ -1,4 +1,4 @@
-import * as Obj from "./object";
+
 
 const gamecanvas = new UICanvas()
 let maintexture = new Texture("images/uimap.png")
@@ -7,22 +7,7 @@ export class GlobalVars {
  
 
 }
-
-      export class ObjCrea extends Entity {
-        constructor(
-        model?:GLTFShape,
-        X?:typeof Obj.Settings.X,
-        Y?:typeof Obj.Settings.Y
-        ){
-          super()
-          const Objcreation =  Obj.Base
-          Objcreation.addComponent(model? model: new BoxShape)
-          Objcreation.addComponent(new Transform({
-          position: new Vector3(X? X:1,0,Y? Y:1)
-      }))
-
-        }
-      }
+        
       
 
       const npc = new Entity
@@ -46,7 +31,7 @@ export class GlobalVars {
         ))
       engine.addEntity(npc)
       
-      const DialogBox = new UIImage(gamecanvas, maintexture)
+      export const DialogBox = new UIImage(gamecanvas, maintexture)
       DialogBox.sourceWidth = 760
       DialogBox.sourceHeight = 374
       DialogBox.sourceLeft = 19
@@ -60,7 +45,7 @@ export class GlobalVars {
       DialogBox.visible = false
 
 
-      const EggCounter = new UIImage(gamecanvas, maintexture)
+     export const EggCounter = new UIImage(gamecanvas, maintexture)
       EggCounter.sourceWidth = 94
       EggCounter.sourceHeight = 124
       EggCounter.sourceLeft = 626
@@ -99,17 +84,7 @@ export class GlobalVars {
       Yes.hAlign = 'center'
       Yes.vAlign = 'center'
       Yes.isPointerBlocker = true
-      Yes.onClick = new OnClick(() => {
-        DialogBox.visible = false
-        counter.visible = true
-        EggCounter.visible = true
-        engine.addEntity(Obj.Base)
-        
-        
-        
-                
-      
-})
+  
       const No = new UIImage(DialogBox, maintexture)
       No.sourceWidth = 249
       No.sourceHeight = 73
@@ -127,5 +102,4 @@ export class GlobalVars {
         
 
     })
-
 
