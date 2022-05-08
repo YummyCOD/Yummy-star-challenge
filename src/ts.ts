@@ -52,6 +52,7 @@ export function NewObject(
             UI.counter.visible = true
             UI.ObjCounter.visible = true
             model.visible = true
+            UI.npc.removeComponent(OnPointerDown)
           })
       
           

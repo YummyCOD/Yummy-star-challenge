@@ -10,7 +10,7 @@ export class GlobalVars {
         
       
 
-      const npc = new Entity
+     export const npc = new Entity
       npc.addComponent(new GLTFShape("models/npc.glb"))
       npc.addComponent(new Transform({
           position: new Vector3(3,0,3),
@@ -43,13 +43,7 @@ export class GlobalVars {
 
 }
         ))
-        npc.addComponent(
-          new OnPointerUp(
-            (e) => {
-              npc.removeComponent(OnPointerDown)
-               
-            },
-          ))
+       
       engine.addEntity(npc)
      
 
