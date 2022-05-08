@@ -19,10 +19,10 @@
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0",
-    "yarn": "please use npm"
   },
   "dependencies": {
-    "@dcl/ecs-scene-utils": "^1.7.5"
+    "@dcl/ecs-scene-utils": "^1.7.5",
+    "decentraland": "^3.10.2"
   },
   "bundleDependencies": [
     "@dcl/ecs-scene-utils"
